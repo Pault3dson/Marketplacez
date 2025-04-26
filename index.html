@@ -322,26 +322,70 @@
             transform: scale(1.02);
         }
 
-        #userListings {
+        #userProfiles, #userListings {
             margin-top: 2rem;
         }
 
-        #userListings h3 {
+        #userProfiles h3, #userListings h3 {
             color: #006400;
             margin-bottom: 1rem;
             font-size: 1.8rem;
         }
 
-        #listingsContainer {
+        #profilesContainer, #listingsContainer {
             list-style: none;
         }
 
-        #listingsContainer li {
+        #profilesContainer li, #listingsContainer li {
             background-color: white;
             padding: 1rem;
             margin-bottom: 1rem;
             border-radius: 8px;
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Agriculture Fun Facts & Quotes section */
+        #agri-facts {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #agri-facts h2 {
+            color: #006400;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        #agri-facts .fact, #agri-facts .quote {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-left: 4px solid #ffeb3b;
+        }
+
+        #agri-facts h3 {
+            color: #006400;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #agri-facts p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        #agri-facts .quote p {
+            font-style: italic;
+        }
+
+        #agri-facts .quote p:last-child {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-top: 0.5rem;
         }
 
         /* Blog section */
@@ -536,6 +580,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#listings">Listings</a></li>
                     <li><a href="#profiles">Profiles</a></li>
+                    <li><a href="#agri-facts">Agri Facts</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -643,42 +688,4 @@
             </div>
             <div class="listing-form">
                 <h3>Add a Listing</h3>
-                <form id="listingForm">
-                    <label for="listingTitle">Listing Title:</label>
-                    <input type="text" id="listingTitle" placeholder="e.g., Maize Farming Consultation" required>
-                    
-                    <label for="listingDescription">Description:</label>
-                    <textarea id="listingDescription" placeholder="Describe your product or service" required></textarea>
-                    
-                    <label for="listingPrice">Price (USD):</label>
-                    <input type="number" id="listingPrice" placeholder="e.g., 20" required>
-                    
-                    <button type="submit">Add Listing</button>
-                </form>
-            </div>
-            <div id="userListings">
-                <h3>Your Listings</h3>
-                <ul id="listingsContainer"></ul>
-            </div>
-        </section>
-
-        <section id="blog">
-            <h2>Our Mission</h2>
-            <article>
-                <h3>Creating a Safe Space for Online Transactions in Zimbabwe</h3>
-                <p>Posted on April 26, 2025 by Tatenda Chipara</p>
-                <p>At MarketplaceZim, our mission is to provide a secure and reliable platf I'lll all
-
-
-
-
-
-
-
-
-
-
-
-
-
-                
+                <form id="l
