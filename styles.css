@@ -7,10 +7,38 @@
 
 /* Body styling */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Modern font */
     line-height: 1.6;
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: #f8f9fa;
+    color: #2c3e50;
+}
+
+/* Loading spinner */
+.spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner-circle {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #006400;
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* Header styling */
@@ -21,6 +49,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
@@ -33,7 +62,8 @@ header {
 }
 
 .logo h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 nav ul {
@@ -45,7 +75,8 @@ nav ul {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -55,19 +86,21 @@ nav ul li a:hover {
 .cta-button {
     background-color: #ffeb3b;
     color: #006400;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: #fdd835;
+    background-color: #ffd700;
+    transform: scale(1.05);
 }
 
 /* Hero section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-bg.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-bg.jpg');
     background-size: cover;
     background-position: center;
     height: 500px;
@@ -84,12 +117,13 @@ nav ul li a:hover {
 }
 
 .hero-content h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    font-weight: 700;
     margin-bottom: 1rem;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 1.5rem;
 }
 
@@ -102,6 +136,11 @@ nav ul li a:hover {
 
 .feature {
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
 }
 
 .feature img {
@@ -113,6 +152,41 @@ nav ul li a:hover {
 .feature p {
     font-size: 1rem;
     color: #ffeb3b;
+    font-weight: 500;
+}
+
+/* Fade-in animation for hero elements */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.fade-in:nth-child(1) { animation-delay: 0.5s; }
+.fade-in:nth-child(2) { animation-delay: 1s; }
+.fade-in:nth-child(3) { animation-delay: 1.5s; }
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Call-to-action banner */
+#cta-banner {
+    background-color: #006400;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+}
+
+#cta-banner h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#cta-banner p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
 }
 
 /* Listings section */
@@ -125,6 +199,7 @@ nav ul li a:hover {
 #listings h2 {
     text-align: center;
     color: #006400;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
@@ -132,6 +207,7 @@ nav ul li a:hover {
     text-align: center;
     margin-bottom: 2rem;
     color: #666;
+    font-size: 1.1rem;
 }
 
 .listings-container {
@@ -142,14 +218,15 @@ nav ul li a:hover {
 
 .listing-card {
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .listing-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .listing-card img {
@@ -161,6 +238,7 @@ nav ul li a:hover {
 .listing-card h3 {
     color: #006400;
     margin: 1rem;
+    font-size: 1.5rem;
 }
 
 .listing-card p {
@@ -169,9 +247,9 @@ nav ul li a:hover {
 }
 
 .listing-card .price {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: bold;
-    color: #d32f2f; /* Red (Zimbabwe flag) */
+    color: #d32f2f;
     margin: 0 1rem 1rem;
 }
 
@@ -179,10 +257,11 @@ nav ul li a:hover {
     display: block;
     background-color: #006400;
     color: white;
-    padding: 0.5rem;
+    padding: 0.75rem;
     text-align: center;
     text-decoration: none;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 15px 15px;
+    transition: background-color 0.3s ease;
 }
 
 .listing-button:hover {
@@ -194,13 +273,14 @@ nav ul li a:hover {
     max-width: 800px;
     margin: 3rem auto;
     padding: 2rem;
-    background-color: #fff9c4; /* Light yellow (Zimbabwe flag) */
-    border-radius: 10px;
+    background-color: #fff9c4;
+    border-radius: 15px;
     text-align: center;
 }
 
 #profiles h2 {
     color: #006400;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
@@ -211,6 +291,7 @@ nav ul li a:hover {
 .profile-form h3, .listing-form h3 {
     color: #006400;
     margin-bottom: 1rem;
+    font-size: 1.8rem;
 }
 
 #profileForm, #listingForm {
@@ -222,19 +303,26 @@ nav ul li a:hover {
 }
 
 #profileForm label, #listingForm label {
-    font-weight: bold;
-    color: #333;
+    font-weight: 600;
+    color: #2c3e50;
 }
 
 #profileForm input, #listingForm input, #listingForm textarea {
-    padding: 0.5rem;
+    padding: 0.75rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 8px;
     font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#profileForm input:focus, #listingForm input:focus, #listingForm textarea:focus {
+    border-color: #006400;
+    outline: none;
 }
 
 #listingForm textarea {
-    height: 100px;
+    height: 120px;
+    resize: vertical;
 }
 
 #profileForm button, #listingForm button {
@@ -242,13 +330,15 @@ nav ul li a:hover {
     color: white;
     padding: 0.75rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #profileForm button:hover, #listingForm button:hover {
     background-color: #004d00;
+    transform: scale(1.02);
 }
 
 #userListings {
@@ -258,6 +348,7 @@ nav ul li a:hover {
 #userListings h3 {
     color: #006400;
     margin-bottom: 1rem;
+    font-size: 1.8rem;
 }
 
 #listingsContainer {
@@ -268,8 +359,8 @@ nav ul li a:hover {
     background-color: white;
     padding: 1rem;
     margin-bottom: 1rem;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Blog section */
@@ -277,29 +368,33 @@ nav ul li a:hover {
     max-width: 800px;
     margin: 3rem auto;
     padding: 2rem;
-    background-color: #ffffff; /* White (Zimbabwe flag) */
-    border-radius: 10px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 #blog h2 {
     color: #006400;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     text-align: center;
 }
 
 #blog article {
     border-left: 4px solid #ffeb3b;
-    padding-left: 1rem;
+    padding-left: 1.5rem;
 }
 
 #blog h3 {
     color: #006400;
+    font-size: 1.8rem;
     margin-bottom: 0.5rem;
 }
 
 #blog p {
     margin-bottom: 1rem;
     color: #666;
+    font-size: 1.1rem;
 }
 
 /* About section */
@@ -308,13 +403,19 @@ nav ul li a:hover {
     margin: 3rem auto;
     padding: 2rem;
     background-color: #fff9c4;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
 }
 
 #about h2 {
     color: #006400;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+}
+
+#about p {
+    font-size: 1.1rem;
+    color: #666;
 }
 
 /* Contact section */
@@ -323,23 +424,30 @@ nav ul li a:hover {
     margin: 3rem auto;
     padding: 2rem;
     background-color: #fff9c4;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
 }
 
 #contact h2 {
     color: #006400;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+}
+
+#contact p {
+    font-size: 1.1rem;
+    color: #666;
 }
 
 #contact a {
     color: #006400;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 #contact a:hover {
-    text-decoration: underline;
+    color: #004d00;
 }
 
 /* Footer styling */
@@ -357,6 +465,7 @@ footer {
 
 .footer-container p {
     margin-bottom: 1rem;
+    font-size: 1rem;
 }
 
 .footer-container nav ul {
@@ -368,8 +477,67 @@ footer {
 .social-links a {
     color: #ffeb3b;
     text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .social-links a:hover {
     color: white;
 }
+
+/* Back to Top button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #006400;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#back-to-top:hover {
+    background-color: #004d00;
+    transform: scale(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-features {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    #cta-banner h2 {
+        font-size: 1.5rem;
+    }
+
+    #cta-banner p {
+        font-size: 1rem;
+    }
+    }
