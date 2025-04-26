@@ -7,6 +7,10 @@ window.onload = function() {
         listItem.textContent = `${listing.title} - $${listing.price}: ${listing.description}`;
         listingsContainer.appendChild(listItem);
     });
+
+    // Hide loading spinner after page loads
+    const spinner = document.getElementById('loading-spinner');
+    spinner.style.display = 'none';
 };
 
 // Handle profile form submission
@@ -43,4 +47,21 @@ document.getElementById('listingForm').addEventListener('submit', function(event
 
     // Reset the form
     this.reset();
+});
+
+// Back to Top button functionality
+const backToTopButton = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
