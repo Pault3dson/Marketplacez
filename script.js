@@ -1,5 +1,5 @@
-// Load existing listings from localStorage when the DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
+// Load existing listings from localStorage when the page loads
+window.onload = function() {
     const listings = JSON.parse(localStorage.getItem('userListings')) || [];
     const listingsContainer = document.getElementById('listingsContainer');
     listings.forEach(listing => {
@@ -7,21 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         listItem.textContent = `${listing.title} - $${listing.price}: ${listing.description}`;
         listingsContainer.appendChild(listItem);
     });
-
-    // Hide loading spinner after DOM is ready
-    const spinner = document.getElementById('loading-spinner');
-    if (spinner) {
-        spinner.style.display = 'none';
-    }
-});
-
-// Fallback: Hide spinner after 5 seconds if it hasn't been hidden yet
-setTimeout(() => {
-    const spinner = document.getElementById('loading-spinner');
-    if (spinner && spinner.style.display !== 'none') {
-        spinner.style.display = 'none';
-    }
-}, 5000);
+};
 
 // Handle profile form submission
 document.getElementById('profileForm').addEventListener('submit', function(event) {
@@ -52,26 +38,9 @@ document.getElementById('listingForm').addEventListener('submit', function(event
     // Display the listing
     const listingsContainer = document.getElementById('listingsContainer');
     const listItem = document.createElement('li');
-    listItem.textContent = `${title} - $${listing.price}: ${description}`;
+    listItem.textContent = `${title} - $${price}: ${description}`;
     listingsContainer.appendChild(listItem);
 
     // Reset the form
     this.reset();
-});
-
-// Back to Top button functionality
-const backToTopButton = document.getElementById('back-to-top');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopButton.style.display = 'block';
-    } else {
-        backToTopButton.style.display = 'none';
-    }
-});
-
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
 });
