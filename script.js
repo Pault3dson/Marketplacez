@@ -7,7 +7,21 @@ document.addEventListener('DOMContentLoaded', function() {
         listItem.textContent = `${listing.title} - $${listing.price}: ${listing.description}`;
         listingsContainer.appendChild(listItem);
     });
+
+    // Hide loading spinner after DOM is ready
+    const spinner = document.getElementById('loading-spinner');
+    if (spinner) {
+        spinner.classList.add('hidden');
+    }
 });
+
+// Fallback: Hide spinner after 5 seconds if it hasn't been hidden yet
+setTimeout(() => {
+    const spinner = document.getElementById('loading-spinner');
+    if (spinner && !spinner.classList.contains('hidden')) {
+        spinner.classList.add('hidden');
+    }
+}, 5000);
 
 // Handle profile form submission
 document.getElementById('profileForm').addEventListener('submit', function(event) {
