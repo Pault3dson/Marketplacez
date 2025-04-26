@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MarketplaceZim | Secure Online Trading in Zimbabwe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
         /* Reset default styles */
@@ -16,62 +16,461 @@
 
         /* Body styling */
         body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.7;
-            background-color: #f7f9fc;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
             color: #333;
         }
 
         /* Header styling */
         header {
-            background: linear-gradient(90deg, #006400, #008000);
+            background-color: #006400;
             color: white;
             padding: 1rem 0;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 100;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
         }
 
         .header-container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            letter-spacing: 1px;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 1.5rem;
+            gap: 1.2rem;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
-            background-color: #ffeb3b;
-            color: #006400;
+            color: #ffeb3b;
         }
 
         /* Main content */
         main {
-            padding-top: 90px; /* Increased to
+            padding-top: 80px; /* Offset for fixed header */
+        }
+
+        /* Section styling */
+        section {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #006400;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        section p {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Hero section */
+        #home {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            box-shadow: none;
+        }
+
+        #home h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        #home .features {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        #home .feature {
+            text-align: center;
+        }
+
+        #home .feature img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 0.5rem;
+        }
+
+        #home .feature p {
+            color: #ffeb3b;
+            font-weight: 500;
+        }
+
+        /* Listings section */
+        #listings .listings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        #listings .listing-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        #listings .listing-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        #listings .listing-card h3 {
+            color: #006400;
+            font-size: 1.3rem;
+            margin: 0.5rem 0;
+        }
+
+        #listings .listing-card .price {
+            color: #d32f2f;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        #listings .listing-card a {
+            display: inline-block;
+            background-color: #006400;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #listings .listing-card a:hover {
+            background-color: #004d00;
+        }
+
+        /* Forms in Profiles and Add Listing */
+        #profiles form, #add-listing form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        #profiles label, #add-listing label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        #profiles input, #profiles textarea, #add-listing input, #add-listing textarea {
+            padding: 0.7rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        #add-listing textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        #profiles button, #add-listing button {
+            background-color: #006400;
+            color: white;
+            padding: 0.7rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #profiles button:hover, #add-listing button:hover {
+            background-color: #004d00;
+        }
+
+        #profiles ul, #add-listing ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        #profiles ul li, #add-listing ul li {
+            background-color: #f9f9f9;
+            padding: 0.7rem;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Agri Tips, Blog, About, Contact */
+        #agri-tips .tip, #blog .post {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-left: 3px solid #ffeb3b;
+        }
+
+        #agri-tips .tip h3, #blog .post h3 {
+            color: #006400;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #contact a {
+            color: #006400;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        #contact a:hover {
+            color: #004d00;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #006400;
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ffeb3b;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            #home h2 {
+                font-size: 2rem;
+            }
+
+            #home .features {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>MarketplaceZim</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#listings">Listings</a></li>
+                    <li><a href="#profiles">Profiles</a></li>
+                    <li><a href="#add-listing">Add Listing</a></li>
+                    <li><a href="#agri-tips">Agri Tips</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <div>
+                <h2>Welcome to MarketplaceZim</h2>
+                <p>The safest platform for online buying, selling, and connecting in Zimbabwe.</p>
+                <div class="features">
+                    <div class="feature">
+                        <img src="safety-icon.png" alt="Safety Icon" loading="lazy">
+                        <p>Verified Users</p>
+                    </div>
+                    <div class="feature">
+                        <img src="market-icon.png" alt="Market Icon" loading="lazy">
+                        <p>Diverse Listings</p>
+                    </div>
+                    <div class="feature">
+                        <img src="support-icon.png" alt="Support Icon" loading="lazy">
+                        <p>24/7 Support</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="listings">
+            <h2>Featured Listings</h2>
+            <p>Explore products and services from trusted sellers across Zimbabwe.</p>
+            <div class="listings-grid">
+                <div class="listing-card">
+                    <img src="farm-budget.jpg" alt="Farm Budget" loading="lazy">
+                    <h3>Farm Budgets</h3>
+                    <p>Financial plans for your farm with cost analysis.</p>
+                    <p class="price">$25 per session</p>
+                    <a href="#contact">Contact Seller</a>
+                </div>
+                <div class="listing-card">
+                    <img src="potato-farming.jpg" alt="Potato Farming" loading="lazy">
+                    <h3>Potato Farming Consultation</h3>
+                    <p>Best practices for potato farming and market strategies.</p>
+                    <p class="price">$10 per session</p>
+                    <a href="#contact">Contact Seller</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="profiles">
+            <h2>Create Your Profile</h2>
+            <p>Join MarketplaceZim to start trading securely.</p>
+            <form id="profileForm">
+                <label for="userName">Full Name:</label>
+                <input type="text" id="userName" placeholder="Enter your name" required>
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" placeholder="Enter your email" required>
+                <label for="userPhone">Phone Number:</label>
+                <input type="tel" id="userPhone" placeholder="Enter your phone number" required>
+                <button type="submit">Create Profile</button>
+            </form>
+            <div id="userProfiles">
+                <h3>Your Profiles</h3>
+                <ul id="profilesContainer"></ul>
+            </div>
+        </section>
+
+        <section id="add-listing">
+            <h2>Add a Listing</h2>
+            <p>List your product or service on MarketplaceZim.</p>
+            <form id="listingForm">
+                <label for="listingTitle">Listing Title:</label>
+                <input type="text" id="listingTitle" placeholder="Enter listing title" required>
+                <label for="listingDescription">Description:</label>
+                <textarea id="listingDescription" placeholder="Describe your product or service" required></textarea>
+                <label for="listingPrice">Price:</label>
+                <input type="text" id="listingPrice" placeholder="Enter price (e.g., $20)" required>
+                <button type="submit">Add Listing</button>
+            </form>
+            <div id="userListings">
+                <h3>Your Listings</h3>
+                <ul id="listingsContainer"></ul>
+            </div>
+        </section>
+
+        <section id="agri-tips">
+            <h2>Agri Tips</h2>
+            <p>Helpful advice for farming in Zimbabwe.</p>
+            <div class="tip">
+                <h3>Tip of the Day</h3>
+                <p>Rotate crops to improve soil health and reduce pests.</p>
+            </div>
+            <div class="tip">
+                <h3>Did You Know?</h3>
+                <p>Tobacco is one of Zimbabwe’s top agricultural exports.</p>
+            </div>
+        </section>
+
+        <section id="blog">
+            <h2>Blog</h2>
+            <p>Stay updated with the latest insights on agribusiness.</p>
+            <div class="post">
+                <h3>Modern Farming in Zimbabwe</h3>
+                <p>Technology is transforming agriculture in Zimbabwe with tools like smart irrigation.</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>MarketplaceZim is a secure platform for online trading in Zimbabwe, connecting buyers and sellers with trust and transparency.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us for any inquiries.</p>
+            <p>Email: <a href="mailto:pault3dson@gmail.com">pault3dson@gmail.com</a></p>
+            <p>Phone: <a href="tel:+263717308762">+263 717 308 762</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 MarketplaceZim. All rights reserved.</p>
+        <div>
+            <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        // Profile Form Submission
+        document.getElementById('profileForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            const phone = document.getElementById('userPhone').value;
+
+            const profileList = document.getElementById('profilesContainer');
+            const li = document.createElement('li');
+            li.textContent = `Name: ${name}, Email: ${email}, Phone: ${phone}`;
+            profileList.appendChild(li);
+
+            document.getElementById('profileForm').reset();
+        });
+
+        // Listing Form Submission
+        document.getElementById('listingForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const title = document.getElementById('listingTitle').value;
+            const description = document.getElementById('listingDescription').value;
+            const price = document.getElementById('listingPrice').value;
+
+            const listingList = document.getElementById('listingsContainer');
+            const li = document.createElement('li');
+            li.textContent = `Title: ${title}, Description: ${description}, Price: ${price}`;
+            listingList.appendChild(li);
+
+            document.getElementById('listingForm').reset();
+        });
+    </script>
+</body>
+                    </html>
