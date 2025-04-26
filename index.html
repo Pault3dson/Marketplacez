@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MarketplaceZim | Safe Online Transactions in Zimbabwe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>MarketplaceZim | Secure Online Trading in Zimbabwe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
         /* Reset default styles */
@@ -16,10 +16,10 @@
 
         /* Body styling */
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
-            background-color: #f8f9fa;
-            color: #2c3e50;
+            background-color: #f5f5f5;
+            color: #333;
         }
 
         /* Header styling */
@@ -27,14 +27,14 @@
             background-color: #006400;
             color: white;
             padding: 1rem 0;
-            position: sticky;
+            position: fixed;
             top: 0;
+            width: 100%;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .header-container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 1rem;
             display: flex;
@@ -43,20 +43,20 @@
         }
 
         .logo h1 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 1.5rem;
+            gap: 1.2rem;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             transition: color 0.3s ease;
         }
 
@@ -64,427 +64,192 @@
             color: #ffeb3b;
         }
 
-        .cta-button {
-            background-color: #ffeb3b;
-            color: #006400;
-            padding: 0.5rem 1.5rem;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+        /* Main content */
+        main {
+            padding-top: 80px; /* Offset for fixed header */
         }
 
-        .cta-button:hover {
-            background-color: #ffd700;
-            transform: scale(1.05);
+        /* Section styling */
+        section {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #006400;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        section p {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
         }
 
         /* Hero section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-bg.jpg');
+        #home {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-bg.jpg');
             background-size: cover;
             background-position: center;
-            height: 500px;
+            height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
+            box-shadow: none;
         }
 
-        .hero-content {
-            max-width: 800px;
-            padding: 1rem;
-        }
-
-        .hero-content h2 {
-            font-size: 3rem;
-            font-weight: 700;
+        #home h2 {
+            color: white;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
 
-        .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-features {
+        #home .features {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 1.5rem;
+            margin-top: 1rem;
         }
 
-        .feature {
+        #home .feature {
             text-align: center;
-            transition: transform 0.3s ease;
         }
 
-        .feature:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature img {
-            width: 50px;
-            height: 50px;
+        #home .feature img {
+            width: 40px;
+            height: 40px;
             margin-bottom: 0.5rem;
         }
 
-        .feature p {
-            font-size: 1rem;
+        #home .feature p {
             color: #ffeb3b;
             font-weight: 500;
         }
 
-        /* Fade-in animation for hero elements */
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 1s ease forwards;
-        }
-
-        .fade-in:nth-child(1) { animation-delay: 0.5s; }
-        .fade-in:nth-child(2) { animation-delay: 1s; }
-        .fade-in:nth-child(3) { animation-delay: 1.5s; }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Call-to-action banner */
-        #cta-banner {
-            background-color: #006400;
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-            margin: 2rem 0;
-        }
-
-        #cta-banner h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        #cta-banner p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
-
         /* Listings section */
-        #listings {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 1rem;
-        }
-
-        #listings h2 {
-            text-align: center;
-            color: #006400;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        #listings > p {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        .listings-container {
+        #listings .listings-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
-        .listing-card {
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        #listings .listing-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
         }
 
-        .listing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .listing-card img {
+        #listings .listing-card img {
             width: 100%;
-            height: 150px;
+            height: 120px;
             object-fit: cover;
+            border-radius: 5px;
         }
 
-        .listing-card h3 {
+        #listings .listing-card h3 {
             color: #006400;
-            margin: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .listing-card p {
-            margin: 0 1rem 1rem;
-            color: #666;
-        }
-
-        .listing-card .price {
             font-size: 1.3rem;
-            font-weight: bold;
-            color: #d32f2f;
-            margin: 0 1rem 1rem;
+            margin: 0.5rem 0;
         }
 
-        .listing-button {
-            display: block;
+        #listings .listing-card .price {
+            color: #d32f2f;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        #listings .listing-card a {
+            display: inline-block;
             background-color: #006400;
             color: white;
-            padding: 0.75rem;
-            text-align: center;
+            padding: 0.5rem 1rem;
             text-decoration: none;
-            border-radius: 0 0 15px 15px;
+            border-radius: 5px;
             transition: background-color 0.3s ease;
         }
 
-        .listing-button:hover {
+        #listings .listing-card a:hover {
             background-color: #004d00;
         }
 
-        /* Profiles section */
-        #profiles {
-            max-width: 800px;
-            margin: 3rem auto;
-            padding: 2rem;
-            background-color: #fff9c4;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        #profiles h2 {
-            color: #006400;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Add Listing section */
-        #add-listing {
-            max-width: 800px;
-            margin: 3rem auto;
-            padding: 2rem;
-            background-color: #fff9c4;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        #add-listing h2 {
-            color: #006400;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .profile-form, .listing-form {
-            margin: 2rem 0;
-        }
-
-        .profile-form h3, .listing-form h3 {
-            color: #006400;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-
-        #profileForm, #listingForm {
+        /* Forms in Profiles and Add Listing */
+        #profiles form, #add-listing form {
+            max-width: 500px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
         }
 
-        #profileForm label, #listingForm label {
-            font-weight: 600;
-            color: #2c3e50;
+        #profiles label, #add-listing label {
+            font-weight: 500;
+            color: #333;
         }
 
-        #profileForm input, #listingForm input, #listingForm textarea {
-            padding: 0.75rem;
+        #profiles input, #profiles textarea, #add-listing input, #add-listing textarea {
+            padding: 0.7rem;
             border: 1px solid #ccc;
-            border-radius: 8px;
+            border-radius: 5px;
             font-size: 1rem;
-            transition: border-color 0.3s ease;
         }
 
-        #profileForm input:focus, #listingForm input:focus, #listingForm textarea:focus {
-            border-color: #006400;
-            outline: none;
-        }
-
-        #listingForm textarea {
-            height: 120px;
+        #add-listing textarea {
+            height: 100px;
             resize: vertical;
         }
 
-        #profileForm button, #listingForm button {
+        #profiles button, #add-listing button {
             background-color: #006400;
             color: white;
-            padding: 0.75rem;
+            padding: 0.7rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 5px;
             cursor: pointer;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: background-color 0.3s ease;
         }
 
-        #profileForm button:hover, #listingForm button:hover {
+        #profiles button:hover, #add-listing button:hover {
             background-color: #004d00;
-            transform: scale(1.02);
         }
 
-        #userProfiles, #userListings {
-            margin-top: 2rem;
-        }
-
-        #userProfiles h3, #userListings h3 {
-            color: #006400;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-
-        #profilesContainer, #listingsContainer {
+        #profiles ul, #add-listing ul {
             list-style: none;
+            margin-top: 1rem;
         }
 
-        #profilesContainer li, #listingsContainer li {
-            background-color: white;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Agriculture Tips section */
-        #agri-tips {
-            max-width: 800px;
-            margin: 3rem auto;
-            padding: 2rem;
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        #agri-tips h2 {
-            color: #006400;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        #agri-tips .fact, #agri-tips .quote {
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            border-left: 4px solid #ffeb3b;
-        }
-
-        #agri-tips h3 {
-            color: #006400;
-            font-size: 1.5rem;
+        #profiles ul li, #add-listing ul li {
+            background-color: #f9f9f9;
+            padding: 0.7rem;
+            border-radius: 5px;
             margin-bottom: 0.5rem;
         }
 
-        #agri-tips p {
-            color: #666;
-            font-size: 1.1rem;
+        /* Agri Tips, Blog, About, Contact */
+        #agri-tips .tip, #blog .post {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-left: 3px solid #ffeb3b;
         }
 
-        #agri-tips .quote p {
-            font-style: italic;
-        }
-
-        #agri-tips .quote p:last-child {
-            font-weight: 600;
-            color: #2c3e50;
-            margin-top: 0.5rem;
-        }
-
-        /* Blog section */
-        #blog {
-            max-width: 800px;
-            margin: 3rem auto;
-            padding: 2rem;
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        #blog h2 {
+        #agri-tips .tip h3, #blog .post h3 {
             color: #006400;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        #blog article {
-            border-left: 4px solid #ffeb3b;
-            padding-left: 1.5rem;
-        }
-
-        #blog h3 {
-            color: #006400;
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        #blog p {
-            margin-bottom: 1rem;
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        /* About section */
-        #about {
-            max-width: 800px;
-            margin: 3rem auto;
-            padding: 2rem;
-            background-color: #fff9c4;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        #about h2 {
-            color: #006400;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        #about p {
-            font-size: 1.1rem;
-            color: #666;
-        }
-
-        /* Contact section */
-        #contact {
-            max-width: 800px;
-            margin: 3rem auto;
-            padding: 2rem;
-            background-color: #fff9c4;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        #contact h2 {
-            color: #006400;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        #contact p {
-            font-size: 1.1rem;
-            color: #666;
+            font-size: 1.3rem;
             margin-bottom: 0.5rem;
         }
 
         #contact a {
             color: #006400;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             transition: color 0.3s ease;
         }
 
@@ -496,74 +261,23 @@
         footer {
             background-color: #006400;
             color: white;
-            padding: 2rem 1rem;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 1.5rem 1rem;
             text-align: center;
         }
 
-        .footer-container p {
-            margin-bottom: 1rem;
-            font-size: 1rem;
-        }
-
-        .footer-container nav ul {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .social-links a {
+        footer a {
             color: #ffeb3b;
             text-decoration: none;
-            font-weight: 600;
+            margin: 0 0.5rem;
             transition: color 0.3s ease;
         }
 
-        .social-links a:hover {
+        footer a:hover {
             color: white;
-        }
-
-        /* Back to Top button */
-        #back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #006400;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            display: none;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        #back-to-top:hover {
-            background-color: #004d00;
-            transform: scale(1.1);
         }
 
         /* Responsive design */
         @media (max-width: 768px) {
-            .hero-content h2 {
-                font-size: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .hero-features {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
             .header-container {
                 flex-direction: column;
                 gap: 1rem;
@@ -572,15 +286,15 @@
             nav ul {
                 flex-direction: column;
                 gap: 0.5rem;
-                text-align: center;
             }
 
-            #cta-banner h2 {
-                font-size: 1.5rem;
+            #home h2 {
+                font-size: 2rem;
             }
 
-            #cta-banner p {
-                font-size: 1rem;
+            #home .features {
+                flex-direction: column;
+                gap: 1rem;
             }
         }
     </style>
@@ -603,16 +317,15 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <a href="#profiles" class="cta-button">Join Now</a>
         </div>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h2 class="fade-in">Welcome to MarketplaceZim</h2>
-                <p class="fade-in">The safest platform for online buying, selling, and connecting in Zimbabwe. Join our trusted community today!</p>
-                <div class="hero-features">
+        <section id="home">
+            <div>
+                <h2>Welcome to MarketplaceZim</h2>
+                <p>The safest platform for online buying, selling, and connecting in Zimbabwe.</p>
+                <div class="features">
                     <div class="feature">
                         <img src="safety-icon.png" alt="Safety Icon" loading="lazy">
                         <p>Verified Users</p>
@@ -626,52 +339,42 @@
                         <p>24/7 Support</p>
                     </div>
                 </div>
-                <a href="#listings" class="cta-button fade-in">Explore Listings</a>
             </div>
-        </section>
-
-        <section id="cta-banner">
-            <h2>Start Trading Safely Today!</h2>
-            <p>Join MarketplaceZim and connect with verified buyers and sellers across Zimbabwe.</p>
-            <a href="#profiles" class="cta-button">Get Started</a>
         </section>
 
         <section id="listings">
             <h2>Featured Listings</h2>
-            <p>Discover a range of services and products from trusted sellers across Zimbabwe.</p>
-            <div class="listings-container">
+            <p>Explore products and services from trusted sellers across Zimbabwe.</p>
+            <div class="listings-grid">
                 <div class="listing-card">
                     <img src="farm-budget.jpg" alt="Farm Budget" loading="lazy">
                     <h3>Farm Budgets</h3>
-                    <p>Detailed financial plans for your farm, including cost analysis and profit forecasting.</p>
+                    <p>Financial plans for your farm with cost analysis.</p>
                     <p class="price">$25 per session</p>
-                    <a href="#contact" class="listing-button">Contact Seller</a>
+                    <a href="#contact">Contact Seller</a>
                 </div>
                 <div class="listing-card">
                     <img src="potato-farming.jpg" alt="Potato Farming" loading="lazy">
                     <h3>Potato Farming Consultation</h3>
-                    <p>Best practices for potato farming, from planting to market strategies.</p>
+                    <p>Best practices for potato farming and market strategies.</p>
                     <p class="price">$10 per session</p>
-                    <a href="#contact" class="listing-button">Contact Seller</a>
+                    <a href="#contact">Contact Seller</a>
                 </div>
             </div>
         </section>
 
         <section id="profiles">
-            <h2>Join MarketplaceZim</h2>
-            <p>Create a profile to start listing your products or services today!</p>
-            <div class="profile-form">
-                <h3>Create Your Profile</h3>
-                <form id="profileForm">
-                    <label for="userName">Full Name:</label>
-                    <input type="text" id="userName" placeholder="Enter your name" required>
-                    <label for="userEmail">Email:</label>
-                    <input type="email" id="userEmail" placeholder="Enter your email" required>
-                    <label for="userPhone">Phone Number:</label>
-                    <input type="tel" id="userPhone" placeholder="Enter your phone number" required>
-                    <button type="submit">Create Profile</button>
-                </form>
-            </div>
+            <h2>Create Your Profile</h2>
+            <p>Join MarketplaceZim to start trading securely.</p>
+            <form id="profileForm">
+                <label for="userName">Full Name:</label>
+                <input type="text" id="userName" placeholder="Enter your name" required>
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" placeholder="Enter your email" required>
+                <label for="userPhone">Phone Number:</label>
+                <input type="tel" id="userPhone" placeholder="Enter your phone number" required>
+                <button type="submit">Create Profile</button>
+            </form>
             <div id="userProfiles">
                 <h3>Your Profiles</h3>
                 <ul id="profilesContainer"></ul>
@@ -680,9 +383,94 @@
 
         <section id="add-listing">
             <h2>Add a Listing</h2>
-            <p>Add your product or service to the marketplace.</p>
-            <div class="listing-form">
-                <h3>Create a Listing</h3>
-                <form id="listingForm">
-                    <label for="listingTitle">Listing Title:</label>
-                    <input type="text" id="listingTitle" placeholder
+            <p>List your product or service on MarketplaceZim.</p>
+            <form id="listingForm">
+                <label for="listingTitle">Listing Title:</label>
+                <input type="text" id="listingTitle" placeholder="Enter listing title" required>
+                <label for="listingDescription">Description:</label>
+                <textarea id="listingDescription" placeholder="Describe your product or service" required></textarea>
+                <label for="listingPrice">Price:</label>
+                <input type="text" id="listingPrice" placeholder="Enter price (e.g., $20)" required>
+                <button type="submit">Add Listing</button>
+            </form>
+            <div id="userListings">
+                <h3>Your Listings</h3>
+                <ul id="listingsContainer"></ul>
+            </div>
+        </section>
+
+        <section id="agri-tips">
+            <h2>Agri Tips</h2>
+            <p>Helpful advice for farming in Zimbabwe.</p>
+            <div class="tip">
+                <h3>Tip of the Day</h3>
+                <p>Rotate crops to improve soil health and reduce pests.</p>
+            </div>
+            <div class="tip">
+                <h3>Did You Know?</h3>
+                <p>Tobacco is one of Zimbabwe’s top agricultural exports.</p>
+            </div>
+        </section>
+
+        <section id="blog">
+            <h2>Blog</h2>
+            <p>Stay updated with the latest insights on agribusiness.</p>
+            <div class="post">
+                <h3>Modern Farming in Zimbabwe</h3>
+                <p>Technology is transforming agriculture in Zimbabwe with tools like smart irrigation.</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>MarketplaceZim is a secure platform for online trading in Zimbabwe, connecting buyers and sellers with trust and transparency.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us for any inquiries.</p>
+            <p>Email: <a href="mailto:pault3dson@gmail.com">pault3dson@gmail.com</a></p>
+            <p>Phone: <a href="tel:+263717308762">+263 717 308 762</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 MarketplaceZim. All rights reserved.</p>
+        <div>
+            <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        // Profile Form Submission
+        document.getElementById('profileForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            const phone = document.getElementById('userPhone').value;
+
+            const profileList = document.getElementById('profilesContainer');
+            const li = document.createElement('li');
+            li.textContent = `Name: ${name}, Email: ${email}, Phone: ${phone}`;
+            profileList.appendChild(li);
+
+            document.getElementById('profileForm').reset();
+        });
+
+        // Listing Form Submission
+        document.getElementById('listingForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const title = document.getElementById('listingTitle').value;
+            const description = document.getElementById('listingDescription').value;
+            const price = document.getElementById('listingPrice').value;
+
+            const listingList = document.getElementById('listingsContainer');
+            const li = document.createElement('li');
+            li.textContent = `Title: ${title}, Description: ${description}, Price: ${price}`;
+            listingList.appendChild(li);
+
+            document.getElementById('listingForm').reset();
+        });
+    </script>
+</body>
+</html>
