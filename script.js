@@ -1,5 +1,5 @@
-// Load existing listings from localStorage when the page loads
-window.onload = function() {
+// Load existing listings from localStorage when the DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
     const listings = JSON.parse(localStorage.getItem('userListings')) || [];
     const listingsContainer = document.getElementById('listingsContainer');
     listings.forEach(listing => {
@@ -8,10 +8,20 @@ window.onload = function() {
         listingsContainer.appendChild(listItem);
     });
 
-    // Hide loading spinner after page loads
+    // Hide loading spinner after DOM is ready
     const spinner = document.getElementById('loading-spinner');
-    spinner.style.display = 'none';
-};
+    if (spinner) {
+        spinner.style.display = 'none';
+    }
+});
+
+// Fallback: Hide spinner after 5 seconds if it hasn't been hidden yet
+setTimeout(() => {
+    const spinner = document.getElementById('loading-spinner');
+    if (spinner && spinner.style.display !== 'none') {
+        spinner.style.display = 'none';
+    }
+}, 5000);
 
 // Handle profile form submission
 document.getElementById('profileForm').addEventListener('submit', function(event) {
@@ -42,7 +52,7 @@ document.getElementById('listingForm').addEventListener('submit', function(event
     // Display the listing
     const listingsContainer = document.getElementById('listingsContainer');
     const listItem = document.createElement('li');
-    listItem.textContent = `${title} - $${price}: ${description}`;
+    listItem.textContent = `${title} - $${listing.price}: ${description}`;
     listingsContainer.appendChild(listItem);
 
     // Reset the form
