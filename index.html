@@ -265,6 +265,22 @@
             margin-bottom: 1rem;
         }
 
+        /* Add Listing section */
+        #add-listing {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: #fff9c4;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        #add-listing h2 {
+            color: #006400;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
         .profile-form, .listing-form {
             margin: 2rem 0;
         }
@@ -344,8 +360,8 @@
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
         }
 
-        /* Agriculture Fun Facts & Quotes section */
-        #agri-facts {
+        /* Agriculture Tips section */
+        #agri-tips {
             max-width: 800px;
             margin: 3rem auto;
             padding: 2rem;
@@ -354,35 +370,35 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        #agri-facts h2 {
+        #agri-tips h2 {
             color: #006400;
             font-size: 2.5rem;
             margin-bottom: 1rem;
             text-align: center;
         }
 
-        #agri-facts .fact, #agri-facts .quote {
+        #agri-tips .fact, #agri-tips .quote {
             margin-bottom: 1.5rem;
             padding: 1rem;
             border-left: 4px solid #ffeb3b;
         }
 
-        #agri-facts h3 {
+        #agri-tips h3 {
             color: #006400;
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
         }
 
-        #agri-facts p {
+        #agri-tips p {
             color: #666;
             font-size: 1.1rem;
         }
 
-        #agri-facts .quote p {
+        #agri-tips .quote p {
             font-style: italic;
         }
 
-        #agri-facts .quote p:last-child {
+        #agri-tips .quote p:last-child {
             font-weight: 600;
             color: #2c3e50;
             margin-top: 0.5rem;
@@ -573,14 +589,14 @@
         <div class="header-container">
             <div class="logo">
                 <h1>MarketplaceZim</h1>
-                <!-- Replace with an image logo: <img src="logo.png" alt="MarketplaceZim Logo"> -->
             </div>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#listings">Listings</a></li>
                     <li><a href="#profiles">Profiles</a></li>
-                    <li><a href="#agri-facts">Agri Tips</a></li>
+                    <li><a href="#add-listing">Add Listing</a></li>
+                    <li><a href="#agri-tips">Agri Tips</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -594,7 +610,7 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <h2 class="fade-in">Welcome to MarketplaceZim</h2>
-                <p class="fade-in">The safest platform for online buying, giving advice, selling, and connecting in Zimbabwe. Join our trusted community today!</p>
+                <p class="fade-in">The safest platform for online buying, selling, and connecting in Zimbabwe. Join our trusted community today!</p>
                 <div class="hero-features">
                     <div class="feature">
                         <img src="safety-icon.png" alt="Safety Icon" loading="lazy">
@@ -637,55 +653,56 @@
                     <p class="price">$10 per session</p>
                     <a href="#contact" class="listing-button">Contact Seller</a>
                 </div>
-                <div class="listing-card">
-                    <img src="lessons.jpg" alt="Economic Lessons" loading="lazy">
-                    <h3>Economic Lessons: College</h3>
-                    <p>In-depth lessons for college students in Agriculture Economics.</p>
-                    <p class="price">$40 per session</p>
-                    <a href="#contact" class="listing-button">Contact Seller</a>
-                </div>
-                <div class="listing-card">
-                    <img src="thesis.jpg" alt="Thesis Consultation" loading="lazy">
-                    <h3>Thesis Consultation</h3>
-                    <p>Expert guidance for your Agriculture Economics thesis.</p>
-                    <p class="price">$60 per session</p>
-                    <a href="#contact" class="listing-button">Contact Seller</a>
-                </div>
-                <div class="listing-card">
-                    <img src="livestock.jpg" alt="Livestock Management" loading="lazy">
-                    <h3>Livestock Management Strategies</h3>
-                    <p>Optimize your livestock operations for sustainability.</p>
-                    <p class="price">$30 per session</p>
-                    <a href="#contact" class="listing-button">Contact Seller</a>
-                </div>
-                <div class="listing-card">
-                    <img src="agribusiness.jpg" alt="Agribusiness Analysis" loading="lazy">
-                    <h3>Agribusiness Market Analysis</h3>
-                    <p>Understand market trends to grow your agribusiness.</p>
-                    <p class="price">$50 per session</p>
-                    <a href="#contact" class="listing-button">Contact Seller</a>
-                </div>
             </div>
         </section>
 
         <section id="profiles">
             <h2>Join MarketplaceZim</h2>
-            <p>Create a profile and start listing your products or services today!</p>
+            <p>Create a profile to start listing your products or services today!</p>
             <div class="profile-form">
                 <h3>Create Your Profile</h3>
                 <form id="profileForm">
                     <label for="userName">Full Name:</label>
                     <input type="text" id="userName" placeholder="Enter your name" required>
-                    
                     <label for="userEmail">Email:</label>
                     <input type="email" id="userEmail" placeholder="Enter your email" required>
-                    
                     <label for="userPhone">Phone Number:</label>
                     <input type="tel" id="userPhone" placeholder="Enter your phone number" required>
-                    
                     <button type="submit">Create Profile</button>
                 </form>
             </div>
+            <div id="userProfiles">
+                <h3>Your Profiles</h3>
+                <ul id="profilesContainer"></ul>
+            </div>
+        </section>
+
+        <section id="add-listing">
+            <h2>Add a Listing</h2>
+            <p>Add your product or service to the marketplace.</p>
             <div class="listing-form">
-                <h3>Add a Listing</h3>
-             
+                <h3>Create a Listing</h3>
+                <form id="listingForm">
+                    <label for="listingTitle">Listing Title:</label>
+                    <input type="text" id="listingTitle" placeholder="Enter listing title" required>
+                    <label for="listingDescription">Description:</label>
+                    <textarea id="listingDescription" placeholder="Describe your product or service" required></textarea>
+                    <label for="listingPrice">Price:</label>
+                    <input type="text" id="listingPrice" placeholder="Enter price (e.g., $20)" required>
+                    <button type="submit">Add Listing</button>
+                </form>
+            </div>
+            <div id="userListings">
+                <h3>Your Listings</h3>
+                <ul id="listingsContainer"></ul>
+            </div>
+        </section>
+
+        <section id="agri-tips">
+            <h2>Agri Tips</h2>
+            <div class="fact">
+                <h3>Did You Know?</h3>
+                <p>Zimbabwe’s agricultural sector contributes significantly to the economy, with tobacco being one of the top exports.</p>
+            </div>
+            <div class="fact">
+           
