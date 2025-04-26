@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MarketplaceZim | Safe Online Transactions in Zimbabwe</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png"> <!-- Favicon -->
 </head>
 <body>
+    <div id="loading-spinner" class="spinner">
+        <div class="spinner-circle"></div>
+    </div>
+
     <header>
         <div class="header-container">
             <div class="logo">
                 <h1>MarketplaceZim</h1>
-                <!-- Replace with an image logo later: <img src="logo.png" alt="MarketplaceZim Logo"> -->
+                <!-- Replace with an image logo: <img src="logo.png" alt="MarketplaceZim Logo"> -->
             </div>
             <nav>
                 <ul>
@@ -30,24 +35,30 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <h2>Welcome to MarketplaceZim</h2>
-                <p>Your trusted platform for safe online transactions in Zimbabwe. Buy, sell, and connect with confidence.</p>
+                <h2 class="fade-in">Welcome to MarketplaceZim</h2>
+                <p class="fade-in">The safest platform for online buying, selling, and connecting in Zimbabwe. Join our trusted community today!</p>
                 <div class="hero-features">
                     <div class="feature">
-                        <img src="safety-icon.png" alt="Safety Icon">
+                        <img src="safety-icon.png" alt="Safety Icon" loading="lazy">
                         <p>Verified Users</p>
                     </div>
                     <div class="feature">
-                        <img src="market-icon.png" alt="Market Icon">
+                        <img src="market-icon.png" alt="Market Icon" loading="lazy">
                         <p>Diverse Listings</p>
                     </div>
                     <div class="feature">
-                        <img src="support-icon.png" alt="Support Icon">
+                        <img src="support-icon.png" alt="Support Icon" loading="lazy">
                         <p>24/7 Support</p>
                     </div>
                 </div>
-                <a href="#listings" class="cta-button">Explore Listings</a>
+                <a href="#listings" class="cta-button fade-in">Explore Listings</a>
             </div>
+        </section>
+
+        <section id="cta-banner">
+            <h2>Start Trading Safely Today!</h2>
+            <p>Join MarketplaceZim and connect with verified buyers and sellers across Zimbabwe.</p>
+            <a href="#profiles" class="cta-button">Get Started</a>
         </section>
 
         <section id="listings">
@@ -55,42 +66,42 @@
             <p>Discover a range of services and products from trusted sellers across Zimbabwe.</p>
             <div class="listings-container">
                 <div class="listing-card">
-                    <img src="farm-budget.jpg" alt="Farm Budget">
+                    <img src="farm-budget.jpg" alt="Farm Budget" loading="lazy">
                     <h3>Farm Budgets</h3>
                     <p>Detailed financial plans for your farm, including cost analysis and profit forecasting.</p>
                     <p class="price">$25 per session</p>
                     <a href="#contact" class="listing-button">Contact Seller</a>
                 </div>
                 <div class="listing-card">
-                    <img src="potato-farming.jpg" alt="Potato Farming">
+                    <img src="potato-farming.jpg" alt="Potato Farming" loading="lazy">
                     <h3>Potato Farming Consultation</h3>
                     <p>Best practices for potato farming, from planting to market strategies.</p>
                     <p class="price">$10 per session</p>
                     <a href="#contact" class="listing-button">Contact Seller</a>
                 </div>
                 <div class="listing-card">
-                    <img src="lessons.jpg" alt="Economic Lessons">
+                    <img src="lessons.jpg" alt="Economic Lessons" loading="lazy">
                     <h3>Economic Lessons: College</h3>
                     <p>In-depth lessons for college students in Agriculture Economics.</p>
                     <p class="price">$40 per session</p>
                     <a href="#contact" class="listing-button">Contact Seller</a>
                 </div>
                 <div class="listing-card">
-                    <img src="thesis.jpg" alt="Thesis Consultation">
+                    <img src="thesis.jpg" alt="Thesis Consultation" loading="lazy">
                     <h3>Thesis Consultation</h3>
                     <p>Expert guidance for your Agriculture Economics thesis.</p>
                     <p class="price">$60 per session</p>
                     <a href="#contact" class="listing-button">Contact Seller</a>
                 </div>
                 <div class="listing-card">
-                    <img src="livestock.jpg" alt="Livestock Management">
+                    <img src="livestock.jpg" alt="Livestock Management" loading="lazy">
                     <h3>Livestock Management Strategies</h3>
                     <p>Optimize your livestock operations for sustainability.</p>
                     <p class="price">$30 per session</p>
                     <a href="#contact" class="listing-button">Contact Seller</a>
                 </div>
                 <div class="listing-card">
-                    <img src="agribusiness.jpg" alt="Agribusiness Analysis">
+                    <img src="agribusiness.jpg" alt="Agribusiness Analysis" loading="lazy">
                     <h3>Agribusiness Market Analysis</h3>
                     <p>Understand market trends to grow your agribusiness.</p>
                     <p class="price">$50 per session</p>
@@ -171,21 +182,4 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#listings">Listings</a></li>
                     <li><a href="#profiles">Profiles</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="social-links">
-                <p>Follow us: 
-                    <a href="#">Facebook</a> | 
-                    <a href="#">Twitter</a> | 
-                    <a href="#">LinkedIn</a>
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+                    <li><a href="#blog">Blog
