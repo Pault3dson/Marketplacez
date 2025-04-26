@@ -22,7 +22,6 @@ setTimeout(() => {
         spinner.classList.add('hidden');
     }
 }, 5000);
-
 // Handle profile form submission
 document.getElementById('profileForm').addEventListener('submit', function(event) {
     event.preventDefault();
