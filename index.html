@@ -253,8 +253,8 @@
             background-color: #004d00;
         }
 
-        /* Profiles section */
-        #profiles {
+        /* Team section */
+        #team {
             max-width: 800px;
             margin: 3rem auto;
             padding: 2rem;
@@ -263,83 +263,75 @@
             text-align: center;
         }
 
-        #profiles h2 {
+        #team h2 {
             color: #006400;
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
 
-        .profile-form, .listing-form {
-            margin: 2rem 0;
+        .team-member {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin: 1rem auto;
+            max-width: 600px;
+            transition: transform 0.3s ease;
         }
 
-        .profile-form h3, .listing-form h3 {
-            color: #006400;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
+        .team-member:hover {
+            transform: translateY(-10px);
         }
 
-        #profileForm, #listingForm {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        #profileForm label, #listingForm label {
-            font-weight: 600;
-            color: #2c3e50;
-        }
-
-        #profileForm input, #listingForm input, #listingForm textarea {
-            padding: 0.75rem;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        #profileForm input:focus, #listingForm input:focus, #listingForm textarea:focus {
-            border-color: #006400;
-            outline: none;
-        }
-
-        #listingForm textarea {
+        .team-member img {
+            width: 120px;
             height: 120px;
-            resize: vertical;
-        }
-
-        #profileForm button, #listingForm button {
-            background-color: #006400;
-            color: white;
-            padding: 0.75rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        #profileForm button:hover, #listingForm button:hover {
-            background-color: #004d00;
-            transform: scale(1.02);
-        }
-
-        #userListings {
-            margin-top: 2rem;
-        }
-
-        #userListings h3 {
-            color: #006400;
+            border-radius: 50%;
+            object-fit: cover;
             margin-bottom: 1rem;
+        }
+
+        .team-member h3 {
+            color: #006400;
             font-size: 1.8rem;
+            margin-bottom: 0.5rem;
         }
 
-        #listingsContainer {
-            list-style: none;
+        .team-member .role {
+            color: #d32f2f;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
 
+        .team-member p {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-member .achievements {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .team-member .achievement-badge {
+            background-color: #ffeb3b;
+            color: #006400;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Profiles section */
+        #profiles {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: 
         #listingsContainer li {
             background-color: white;
             padding: 1rem;
@@ -361,7 +353,7 @@
         #blog h2 {
             color: #006400;
             font-size: 2.5rem;
-            margin-bottom     margin-bottom: 1rem;
+            margin-bottom: 1rem;
             text-align: center;
         }
 
@@ -423,8 +415,7 @@
             font-size: 1.1rem;
             color: #666;
         }
-
-        #contact a {
+#contact a {
             color: #006400;
             text-decoration: none;
             font-weight: 600;
@@ -486,7 +477,6 @@
             display: none;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
-
         #back-to-top:hover {
             background-color: #004d00;
             transform: scale(1.1);
@@ -525,6 +515,11 @@
             #cta-banner p {
                 font-size: 1rem;
             }
+
+            .team-member img {
+                width: 100px;
+                height: 100px;
+            }
         }
     </style>
 </head>
@@ -533,12 +528,12 @@
         <div class="header-container">
             <div class="logo">
                 <h1>MarketplaceZim</h1>
-                <!-- Replace with an image logo: <img src="logo.png" alt="MarketplaceZim Logo"> -->
             </div>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#listings">Listings</a></li>
+                    <li><a href="#team">Team</a></li>
                     <li><a href="#profiles">Profiles</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#about">About</a></li>
@@ -627,6 +622,22 @@
             </div>
         </section>
 
+        <section id="team">
+            <h2>Meet Our Team</h2>
+            <p>Driving MarketplaceZim with passion, expertise, and a commitment to empowering Zimbabwe’s marketplace.</p>
+            <div class="team-member">
+                <img src="tatenda-profile.jpg" alt="Tatenda Chipara" loading="lazy">
+                <h3>Tatenda Chipara</h3>
+                <p class="role">Founder & Lead Project Manager</p>
+                <p>Tatenda Chipara, a proud University of Zimbabwe alumnus, graduated with a <strong>First Class Honours Degree</strong> in Agricultural Economics. With a knack for turning vision into reality, Tatenda has spearheaded multiple high-impact projects across Zimbabwe as a seasoned project manager. Known for his strategic insight and relentless drive, he’s the mastermind behind MarketplaceZim, blending innovation with a passion for empowering local entrepreneurs. When he’s not revolutionizing online trade, Tatenda enjoys mentoring young professionals and exploring Zimbabwe’s vibrant agricultural landscapes.</p>
+                <div class="achievements">
+                    <span class="achievement-badge">First Class Degree</span>
+                    <span class="achievement-badge">Project Management Expert</span>
+                    <span class="achievement-badge">Community Innovator</span>
+                </div>
+            </div>
+        </section>
+
         <section id="profiles">
             <h2>Join MarketplaceZim</h2>
             <p>Create a profile and start listing your products or services today!</p>
@@ -640,9 +651,8 @@
                     <input type="email" id="userEmail" placeholder="Enter your email" required>
                     
                     <label for="userPassword">Password:</label>
-                    <input type="password" id="userPassword" placeholder="Enter your password" required>
-                    
-                    <label for="userPhone">Phone Number:</label>
+                    <input type="password" id="userPassword" placeholder="E
+         <label for="userPhone">Phone Number:</label>
                     <input type="tel" id="userPhone" placeholder="Enter your phone number" required>
                     
                     <button type="submit">Create Profile</button>
@@ -668,7 +678,8 @@
                 <p>Discover strategies to scale your agricultural business effectively.</p>
             </article>
         </section>
-      <section id="about">
+
+        <section id="about">
             <h2>About MarketplaceZim</h2>
             <p>MarketplaceZim is Zimbabwe's leading platform for safe and secure online transactions. We connect buyers and sellers across the country, ensuring trust and transparency in every deal.</p>
         </section>
@@ -676,7 +687,7 @@
 
     <footer>
         <div class="footer-container">
-            <p>&copy; 2025 MarketplaceZim. All rights reserved.</p>
+            <p>© 2025 MarketplaceZim. All rights reserved.</p>
             <nav>
                 <ul class="social-links">
                     <li><a href="#">Facebook</a></li>
@@ -757,5 +768,3 @@
     </script>
 </body>
 </html>
-
-      
